@@ -1,0 +1,141 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overscroll-behavior: contain;
+}
+
+@import './theme';
+
+html {
+    font-size: 16px;
+    width: 100%;
+    
+    @media only screen and (max-width: $ss-lg) {
+        font-size: 15px;
+    }
+    @media only screen and (max-width: $ss-md) {
+        font-size: 14px;
+    }
+    @media only screen and (max-width: $ss-sm) {
+        font-size: 13px;
+    }
+    @media only screen and (max-width: $ss-xm) {
+        font-size: 12px;
+    }
+}
+
+::-webkit-scrollbar-track {
+    background-color: $color_1;
+}
+
+::-webkit-scrollbar {
+    border-radius: 1rem;
+    width: 0.2rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+    background-color: $color_4;
+}
+
+body {
+    font-family: $font_family_2;
+    background-color: $white;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    min-height: 100vh;
+}
+
+a {
+    color: $color_2;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: $color_4;
+        text-decoration: none;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $font_family_1;
+}
+
+.btn {
+    font-size: 1rem;
+    color: $color_1;
+    background-color: $color_2;
+    border: none;
+    // padding: 0.4rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: all 0.3s ease;
+
+    &:hover,
+    &:active,
+    &:focus {
+        box-shadow: none;
+        color: $color_1;
+        background-color: $color_2;
+    }
+
+    &:hover {
+        color: $color_1;
+        background-color: $color_3;
+    }
+
+}
+
+main {
+    width: 100%;
+}
+
+.box-shadow {
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+}
+
+.back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 1rem;
+    bottom: -1rem;
+    z-index: 99999;
+    background: $color_2;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 3rem;
+    transition: all 0.4s;
+
+    i {
+        font-size: 1.5rem;
+        color: $white;
+        line-height: 0;
+    }
+
+    &:hover {
+        background: $color_1;
+        color: $white;
+    }
+
+    &.active {
+        visibility: visible;
+        opacity: 1;
+        bottom: 1rem;
+    }
+}
+
+@import './user/partials/hero';
+@import './user/components';
+@import './user/index';
+@import './user/pages/auth';
+@import './user/pages/contact';
+@import './user/partials/header';
+@import './user/partials/footer';
+@import './user/partials/preloader';
